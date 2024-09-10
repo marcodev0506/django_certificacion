@@ -23,4 +23,7 @@ class Licen(models.Model):
 
     def __str__(self):
         return f"{self.title}---{self.asig}"
-    
+
+class Oficio(models.Model):
+    name = models.TextField(max_length=255)
+    relacion= models.ManyToManyField (Carro, related_name="relacion")
