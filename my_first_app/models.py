@@ -19,7 +19,7 @@ class Conductores(models.Model):
 class Licen(models.Model):
     title = models.TextField(max_length=200)
     asig = models.ForeignKey(Conductores, on_delete=models.CASCADE)
-
+    
 
     def __str__(self):
         return f"{self.title}---{self.asig}"
@@ -27,3 +27,8 @@ class Licen(models.Model):
 class Oficio(models.Model):
     name = models.TextField(max_length=255)
     relacion= models.ManyToManyField (Carro, related_name="relacion")
+    
+class Multa(models.Model):
+    descripcion= models.TextField(max_length=255)
+    car= models.OneToOneField(Carro, on_delete=models.CASCADE)
+
