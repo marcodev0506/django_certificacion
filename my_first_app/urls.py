@@ -7,11 +7,8 @@ from my_first_app.views import *
 
 
 urlpatterns = [
-   path('admin/', admin.site.urls),
    path("listado", CarlistView.as_view()), # ass_view retorna el http response 
    path("detalle/<int:id>", my_view)
-
-
 ]
 
 
